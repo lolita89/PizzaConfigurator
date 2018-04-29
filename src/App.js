@@ -255,7 +255,7 @@ class PizzaSize extends React.Component {
           </label>
           <br>
             </br>
-          <input type="submit" value="Submit" />
+          <input type="submit" id="Button" value="Submit"  />
         </form>
         </div>
       );
