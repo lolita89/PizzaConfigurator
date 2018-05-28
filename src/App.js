@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 // import logo from './logo.svg';
 import { connect } from 'react-redux'
 import './App.css';
@@ -7,9 +7,7 @@ class PizzaSize extends React.Component {
     constructor(props) {
       super(props);
       this.state = {size:0,sauce:0};
-  
-      this.handleChange = this.handleChange.bind(this);
-      this.handleSubmit = this.handleSubmit.bind(this);
+
     }
   
     handleChange(event) {
@@ -83,43 +81,43 @@ class PizzaSize extends React.Component {
       // topping message 1 - 7
       var totalTopping = 0;
       var toppingValue = this.state.topping_1;
-      if (toppingValue == 1){
+      if (toppingValue === 1){
         totalTopping = totalTopping + 1;
         successMessage += 'You want also topping Pineapple (' + toppingPrice[1] + ' euro)';
         successMessage += '\n';
       }
       var toppingValue = this.state.topping_2;
-      if (toppingValue == 1){
+      if (toppingValue === 1){
         totalTopping = totalTopping + 1;
         successMessage += 'You want also topping Corn (' + toppingPrice[2] + ' euro)';
         successMessage += '\n';
       }
       var toppingValue = this.state.topping_3;
-      if (toppingValue == 1){
+      if (toppingValue === 1){
         totalTopping = totalTopping + 1;
         successMessage += 'You want also topping Olives (' + toppingPrice[3] + ' euro)';
         successMessage += '\n';
       }
       var toppingValue = this.state.topping_4;
-      if (toppingValue == 1){
+      if (toppingValue === 1){
         totalTopping = totalTopping + 1;
         successMessage += 'You want also topping Red Onion(' + toppingPrice[4] + ' euro)';
         successMessage += '\n';
       }
       var toppingValue = this.state.topping_5;
-      if (toppingValue == 1){
+      if (toppingValue === 1){
         totalTopping = totalTopping + 1;
         successMessage += 'You want also topping Spinach (' + toppingPrice[5] + ' euro)';
         successMessage += '\n';
       }
       var toppingValue = this.state.topping_6;
-      if (toppingValue == 1){
+      if (toppingValue === 1){
         totalTopping = totalTopping + 1;
         successMessage += 'You want also topping Cherry Tomatoes (' + toppingPrice[6] + ' euro)';
         successMessage += '\n';
       }
       var toppingValue = this.state.topping_7;
-      if (toppingValue == 1){
+      if (toppingValue === 1){
         totalTopping = totalTopping + 1;
         successMessage += 'You want also topping Chicken (' + toppingPrice[1] + ' euro)';
         successMessage += '\n';
@@ -141,7 +139,6 @@ class PizzaSize extends React.Component {
         alert('You cannot choose ' +totalTopping+ ' toppings, 3 is the maximum number of toppings, please kindly remake your pizza');
       } else {
         // if total topping 3 or less
-        var txt;
         if (window.confirm(successMessage)) {
           if (window.confirm("Do you want to use Turbo-drone-delivery for " + dronePrice + " Euro?")) {
             // message if turbo drone delivery is selected
